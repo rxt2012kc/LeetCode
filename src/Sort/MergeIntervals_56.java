@@ -71,10 +71,12 @@ public class MergeIntervals_56 {
     }
     public static void main(String[] args) {
         List<Interval> intervals = new ArrayList<>();
-        Interval interval1 = new Interval(1, 4);
-        Interval interval2 = new Interval(0, 2);
-        Interval interval3 = new Interval(3, 5);
-        Interval interval4 = new Interval(6, 7);
+        Interval interval1 = new Interval(1, 10);
+        Interval interval2 = new Interval(5, 6);
+        Interval interval3 = new Interval(20, 210);
+        Interval interval4 = new Interval(7, 8);
+//        Interval interval4 = new Interval(7, 8);
+
         intervals.add(interval1);
         intervals.add(interval2);
         intervals.add(interval3);

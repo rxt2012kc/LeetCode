@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import Array.PascalTriangle_118;
+
 /**
  * @Author RenXintao
  * @Date 3/15/17
@@ -9,21 +11,17 @@ public class InvertBinaryTree_226 {
         if (root == null) {
             return root;
         }
-        invertTreeHelper(root.left, root.right);
+
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+
+        invertTree(root.left);
+        invertTree(root.right);
+
         return root;
     }
-    public static void invertTreeHelper(TreeNode left, TreeNode right) {
-        if (left == null && right == null) {
-            return;
-        }
 
-        invertTreeHelper(left.left, right.right);
-        invertTreeHelper(left.right, right.left);
-
-        TreeNode temp = left;
-        left = right;
-        right = temp;
-    }
     public static void main(String[] args) {
         TreeNode A = new TreeNode(1);
         A.left = new TreeNode(2);

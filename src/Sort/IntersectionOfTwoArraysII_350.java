@@ -52,4 +52,5 @@ public class IntersectionOfTwoArraysII_350 {
         for (int i : ret) {
             System.out.println(i);
         }
-    }}
+    }
+}
