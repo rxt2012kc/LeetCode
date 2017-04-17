@@ -10,6 +10,7 @@ import java.util.Queue;
  * @Date 4/10/17
  */
 public class BinaryTreeLevelOrderTraversal_102 {
+    // bfs
     public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> ret = new ArrayList<List<Integer>>();
 
@@ -32,10 +33,31 @@ public class BinaryTreeLevelOrderTraversal_102 {
                     queue.offer(head.right);
                 }
             }
+            System.out.println(level);
+            System.out.println("**");
             ret.add(level);
         }
 
         return ret;
+    }
+
+    // dfs
+    public static List<List<Integer>> levelOrder2(TreeNode root) {
+        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        levelAdd(root, ret, 0);
+        return ret;
+    }
+    private static void levelAdd(TreeNode root, List<List<Integer>> ret, int level) {
+        if (root == null) {
+            return;
+        }
+
+        if (ret.size() <= level) {
+            ret.add(new ArrayList<Integer>());
+        }
+        ret.get(level).add(root.val);
+        levelAdd(root.left, ret, level + 1);
+        levelAdd(root.right, ret, level + 1);
     }
     public static void main(String[] args) {
         TreeNode A = new TreeNode(1);
